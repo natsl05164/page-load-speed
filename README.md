@@ -3,7 +3,6 @@
 Leverage browser caching,
 For  Apache .htaccess
 
-[code]
 <IfModule mod_headers.c>
 <FilesMatch "\\.(ico|jpg|jpeg|png|gif|swf)$">
 Header set Cache-Control "max-age=2678100, public"
@@ -20,7 +19,7 @@ Header set Cache-Control "max-age=60, private, must-revalidate"
 Header unset ETag
 Header unset Last-Modified
 </IfModule>
-[/code]
+
  
 For nginx Server
 
@@ -32,17 +31,15 @@ Enable gzip compression
  
 On Nginx Server
 
-[code]
 gzip on;
 gzip_proxied any;
 gzip_types text/plain text/xml text/css font/woff2 application/x-javascript application/x-font-woff woff2 application/font-woff2 woff2;
 gzip_vary on;
 gzip_disable "MSIE [1-6]\.(?!.*SV1)";
-[/code]
+
  
 For .htaccess files In Apache
 
-[code]
 <IfModule mod_deflate.c>
 # Compress HTML, CSS, JavaScript, Text, XML and fonts
 AddOutputFilterByType DEFLATE application/javascript
@@ -72,4 +69,4 @@ BrowserMatch ^Mozilla/4\.0[678] no-gzip
 BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 Header append Vary User-Agent
 </IfModule>
-[/code]
+
